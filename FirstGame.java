@@ -8,7 +8,6 @@ import java.util.Timer;
 public class FirstGame extends JFrame implements KeyListener
 {
 		Mario m = new Mario();
-		firstgame2 f = new firstgame2();
 		
 		public static void main(String[] args)
 		{
