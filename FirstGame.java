@@ -19,67 +19,67 @@ public class FirstGame extends JFrame implements KeyListener
 		{
 			super("Mario RipOff");
 			addKeyListener(this);
-            setSize(1400,900); //fit the entire screen 
-            setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            setContentPane(new JLabel(new ImageIcon("src/tree.png")));
-            setLocation(0,0); //set location to 0,0
-            setResizable(true); //this will not be resizable
-            setLayout(null);
-            m.setBounds(0,0,100,100);
-            add(m);
-            int i = 0;
-            setVisible(true); // set visible to true
-            while(m.getAlive() == true)
-            {
-            	int score = 0;
-            	Projectile p = new Projectile();
-            	int y = (int)((Math.random()) * 900);
-            	if (y > 800)
-            	{
-            		y = 800;
-            	}
-            	p.setBounds(1400, y, 100, 100);
-            	p.xlocation = 1300;
-            	add(p);
-            	while(p.xlocation+100 > 0 && m.alive)
-            	{
-            		System.out.println("step");
-            		try{
-            			Thread.sleep(10);
-            			
-            		}catch (InterruptedException ie) {
-            			System.out.println(ie.getMessage());
-            		}
-            		int currentx = p.xlocation;
-            		p.xlocation -= 10;
-            		p.setBounds(currentx, y, 100, 100);
-            		//Dead Logic
-            		if (((m.xlocation + 100 > currentx) && (m.xlocation + 100 < currentx + 100))
-            			|| ((m.xlocation > currentx) && (m.xlocation < currentx + 100)))
-            		{
-            			if (((m.ylocation + 100 > y) && (m.ylocation + 100 < y + 100))
-                    			|| ((m.ylocation > y) && (m.ylocation < y + 100)))
+		    	setSize(1400,900); //fit the entire screen 
+		    	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		    	setContentPane(new JLabel(new ImageIcon("src/tree.png")));
+		    	setLocation(0,0); //set location to 0,0
+		    	setResizable(true); //this will not be resizable
+		    	setLayout(null);
+		    	m.setBounds(0,0,100,100);
+		    	add(m);
+		    	int i = 0;
+            		setVisible(true); // set visible to true
+            		while(m.getAlive() == true)
+           	 	{
+            			int score = 0;
+            			Projectile p = new Projectile();
+            			int y = (int)((Math.random()) * 900);
+            			if (y > 800)
             			{
-            				m.alive = false;
-            				remove(p);
-            				score = m.score;
+            				y = 800;
             			}
-            		 }
-            		p.revalidate();
-            	}
-            	//Remove p
-            	remove(p);
-            	m.score += 10;
-            	}
-            if(!m.alive)
-            {
-            	m.removeAll();
-            	setContentPane(new JLabel(new ImageIcon("src/hell.jpg")));
-            	add(f);
-            	repaint();
-            }
+				p.setBounds(1400, y, 100, 100);
+				p.xlocation = 1300;
+				add(p);
+				while(p.xlocation+100 > 0 && m.alive)
+				{
+					System.out.println("step");
+					try{
+						Thread.sleep(10);
+
+					}catch (InterruptedException ie) {
+						System.out.println(ie.getMessage());
+					}
+					int currentx = p.xlocation;
+					p.xlocation -= 10;
+					p.setBounds(currentx, y, 100, 100);
+					//Dead Logic
+					if (((m.xlocation + 100 > currentx) && (m.xlocation + 100 < currentx + 100))
+						|| ((m.xlocation > currentx) && (m.xlocation < currentx + 100)))
+					{
+						if (((m.ylocation + 100 > y) && (m.ylocation + 100 < y + 100))
+							|| ((m.ylocation > y) && (m.ylocation < y + 100)))
+						{
+							m.alive = false;
+							remove(p);
+							score = m.score;
+						}
+					 }
+					p.revalidate();
+				}
+				//Remove p
+				remove(p);
+				m.score += 10;
+				}
+			    if(!m.alive)
+			    {
+				m.removeAll();
+				setContentPane(new JLabel(new ImageIcon("src/hell.jpg")));
+				add(f);
+				repaint();
+			    }
            
-        }
+        		}
 		
 		
 		//Timer
