@@ -22,9 +22,9 @@ public class Mario extends JPanel implements KeyListener {
 	{
 		xlocation = 0;
 		ylocation = 0;
-		Image img = Toolkit.getDefaultToolkit().getImage("src/Mario.jpg");
+		Image img = Toolkit.getDefaultToolkit().getImage("Mario.png");
 		try {
-			this.img = ImageIO.read(new File("src/Mario.jpg"));
+			this.img = ImageIO.read(new File("Mario.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -21,7 +21,7 @@ public class FirstGame extends JFrame implements KeyListener
 			addKeyListener(this);
             setSize(1400,900); //fit the entire screen 
             setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            setContentPane(new JLabel(new ImageIcon("src/tree.png")));
+            setContentPane(new JLabel(new ImageIcon("tree.png")));
             setLocation(0,0); //set location to 0,0
             setResizable(true); //this will not be resizable
             setLayout(null);
@@ -74,7 +74,7 @@ public class FirstGame extends JFrame implements KeyListener
             if(!m.alive)
             {
             	m.removeAll();
-            	setContentPane(new JLabel(new ImageIcon("src/hell.jpg")));
+            	setContentPane(new JLabel(new ImageIcon("hell.jpg")));
             	add(f);
             	repaint();
             }
